@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apply</title>
+    <link rel="stylesheet" href="assets/apply.css" />
+  </head>
+  <body>
+    <div class="form_container">
+      <form id="reg-form">
+        <h2>Student registration</h2>
+        <div class="form_field">
+          <input type="text" placeholder="First Name" id="first-name" />
+        </div>
+        <div class="form_field">
+          <input type="text" placeholder="Last Name" id="last-name" required />
+        </div>
+        <div class="form_field">
+          <select name="programme" id="programme" required>
+            <option value="null">Please select your programme of choice</option>
+            <option value="BSc(Health Information)">BSc(Health Information)</option>
+            <option value="BSc(Mathematics)">BSc(Mathematics)</option>
+            <option value="BSc(Medicine)">BSc(Medicine)</option>
+            <option value="BSc(Political science)">BSc(Political science)</option>
+            <option value="BSc(International Business)">BSc(International Business)</option>
+          </select>
+        </div>
+        <div class="form_field">
+          <input
+            type="number"
+            min="6"
+            max="36"
+            placeholder="Aggregate"
+            id="aggregate"
+            required
+          />
+        </div>
+        <div class="form_field">
+          <input
+            type="text"
+            placeholder="Your Formal school"
+            id="former-school"
+            required
+          />
+        </div>
+        <div class="form_field">
+          <label>
+            <input type="radio" name="gender" value="male" required />
+            Male
+          </label>
+          <label>
+            <input type="radio" name="gender" value="female" required />
+            Female
+          </label>
+          <label>
+            <input type="radio" name="gender" value="other" required />
+            Other
+          </label>
+        </div>
+        <div class="form_field">
+          <input type="date" placeholder="Date of Birth" id="date-of-birth"  />
+        </div>
+        <div class="form_field">
+          <select name="hallsOfresidence" id="hallsOfresidence" required>
+            <option value="null">Please select your Hall of residence</option>
+            <option value="SRC">SRC</option>
+            <option value="Valco">Valco</option>
+            <option value="Adehye">Adehye</option>
+            <option value="Kwame Nkrumah">Kwame Nkrumah</option>
+            <option value="Casford">Casford</option>
+          </select>
+        </div>
+        <div class="form_field">
+          <label for="">Cafeteria Services</label>
+          <div class="cs_one">
+            <label>
+              <input type="radio" name="cafeteria" value="yes" required />
+              Yes
+            </label>
+          </div>
+          <div class="cs_one">
+            <label>
+              <input type="radio" name="cafeteria" value="no" required />
+              No
+            </label>
+          </div>
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+<script type="application/javascript" src="apply.js"></script>
+</body>
+</html>
