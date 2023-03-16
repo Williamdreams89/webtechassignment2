@@ -5,6 +5,7 @@
     <title>Billing Table</title>
     <link rel="stylesheet" href="assets/prepareBill.css">
     <style>
+
       table {
         border-collapse: collapse;
         width: 80%;
@@ -33,6 +34,14 @@
       <br>
       <br>
     </div>
+    <div class="print">
+      <center style="padding-bottom: 1rem;"><i>Print your bill <b  id="print_link" style="cursor: pointer;"><a href="#" id="print_link"></a>here</a></b></i></center>
+    </div>
+    <script>
+      document.getElementById("print_link").addEventListener('click', ()=>{
+        window.print()
+      })
+    </script>
     <script src="prepareBill.js"></script>
   </body>
 </html>
