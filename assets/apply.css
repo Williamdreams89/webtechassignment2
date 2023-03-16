@@ -1,5 +1,5 @@
 body{
-    background: url("images/family.jpeg");
+    background: linear-gradient(rgba(27, 27, 27, 0.9),rgba(22, 22, 22, 0.9), rgba(19, 18, 18, 0.9),rgba(0, 0, 0)), url("images/family.jpeg");
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +13,7 @@ body{
 .form_container{
     display: flex;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, .6);
+    /* background-color: rgba(27, 27, 27, 0.9); */
     width: 80%;
     padding: 2rem;
 }
@@ -23,6 +23,12 @@ form{
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+#reg-form h2{
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: aqua;
 }
 
 form label{
@@ -44,19 +50,18 @@ input[type="text"],input[type="number"],input[type="date"], select{
 }
 
 input[type="submit"]{
-    width: max-content;
     padding: 10px 20px;
     font-size: 17px;
     background-color: transparent;
-    border: 1px solid white;
+    border: 1px solid rgb(22, 199, 199);
     transition: .4s ease-in-out;
-}
-
-
-input[type="submit"]:hover{
-    background-color: aliceblue;
+    color: white;
+    font-weight: bolder;
+    background-color: rgb(22, 199, 199);
     cursor: pointer;
 }
+
+
 
 input::placeholder{
     color: white;
@@ -71,7 +76,15 @@ select > *{
     color: black;
 }
 
+.backdrop{
+    position: absolute;
+    z-index: -2;
+}
 
+.backdrop img{
+    opacity: 20%;
+    width: 300px;
+}
 
 
 @media screen and (min-width: 700px) {

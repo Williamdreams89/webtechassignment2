@@ -34,6 +34,8 @@ function validateForm() {
   const selectedHallOfResidence =
     document.getElementById("hallsOfresidence").value;
   const dateOfBirth = new Date(document.getElementById("date-of-birth").value);
+  const selectedProgramme = document.getElementById("programme").value;
+
 
   // 1. if a male gender selects adehye hall in the select option, alert "Not allowed"
   if (selectedGender === "male" && selectedHallOfResidence === "Adehye") {
@@ -41,15 +43,34 @@ function validateForm() {
     return false;
   }
 
-  // 1. if a female gender selects adehye hall in the select option, alert "Not allowed"
+  // 2. if a female gender selects adehye hall in the select option, alert "Not allowed"
   if (selectedGender === "female" && selectedHallOfResidence === "Casford") {
     alert("Warning: Casford is a male hall !!");
+    return false;
+  }
+
+  // 3. if a female gender selects valco hall in the select option, alert "Not allowed"
+  if (selectedGender === "female" && selectedHallOfResidence === "Valco") {
+    alert("Warning: Valco is a male hall !!");
+    return false;
+  }
+  
+
+  // 4. if a male gender selects ssnit hall in the select option, alert "Not allowed"
+  if (selectedGender === "male" && selectedHallOfResidence === "SSNIT") {
+    alert("Warning: SSNIT is a female hall !!");
     return false;
   }
 
   // 2. Check if dateOfBirth is valid
   if (isNaN(dateOfBirth.getTime())) {
     alert("Please enter a valid date of birth");
+    return false;
+  }
+
+  // 3. Check if user select null for cases of hall and programme
+  if (selectedHallOfResidence === "null" || selectedProgramme==="null") {
+    alert("Please check hall and programme and try again later!!");
     return false;
   }
 
@@ -60,7 +81,7 @@ function validateForm() {
     return false;
   }
 
-  // 4. Check if the user is at least 18 years old
+  // 5. Check if the user is at least 18 years old
   const ageDiffMs = today - dateOfBirth;
   const ageDate = new Date(ageDiffMs);
   const age = Math.abs(ageDate.getUTCFullYear() - 1970);
@@ -100,38 +121,44 @@ form.addEventListener("submit", function (event) {
     let cafeteriaFee = 0;
 
     switch (selectedHallOfResidence) {
-      case "A":
-        hallFee = 5000;
+      case "Casford":
+        hallFee = 300;
         break;
-      case "B":
-        hallFee = 6000;
+      case "SSNIT":
+        hallFee = 350;
         break;
-      case "C":
-        hallFee = 7000;
+      case "Adehye":
+        hallFee = 300;
+        break;
+      case "Valco":
+        hallFee = 300;
+        break;
+      case "SRC":
+        hallFee = 400;
         break;
     }
 
     switch (selectedProgramme) {
       case "BSc(Health Information)":
-        programFee = 10000;
+        programFee = 5000;
         break;
       case "BSc(Mathematics)":
-        programFee = 12000;
+        programFee = 3500;
         break;
       case "BSc(Medicine)":
-        programFee = 8000;
+        programFee = 7000;
         break;
       case "BSc(Political science)":
-        programFee = 8000;
+        programFee = 2000;
         break;
       case "BSc(International Business)":
-        programFee = 8000;
+        programFee = 2500;
         break;
     }
 
     switch (selectedCaferiaOption) {
       case "yes":
-        cafeteriaFee = 1500;
+        cafeteriaFee = 120;
         break;
       case "no":
         cafeteriaFee = 0;
@@ -150,11 +177,16 @@ form.addEventListener("submit", function (event) {
       day: "numeric",
       year: "numeric",
     });
+
+
     console.log(`formatted date = ${formattedDOBOutput}`);
     // Redirect to table.html with form data as URL parameters
-    const url = `prepareBill.html?firstName=${firstName}&lastName=${lastName}&selectedProgramme=${selectedProgramme}&aggregate=${aggregate}&formerSchool=${formerSchool}&selectedGender=${selectedGender}&dateOfBirth=${formattedDOBOutput}&selectedHallOfResidence=${selectedHallOfResidence}&selectedCaferiaOption=${selectedCaferiaOption}&totalFeesCharged=${totalFees}`;
+    const url = `prepareBill.html?firstName=${firstName}&lastName=${lastName}&selectedProgramme=${selectedProgramme}&aggregate=${aggregate}&formerSchool=${formerSchool}&selectedGender=${selectedGender}&dateOfBirth=${formattedDOBOutput}&selectedHallOfResidence=${selectedHallOfResidence}&selectedCaferiaOption=${selectedCaferiaOption}&totalFeesCharged=${totalFees}&hallFee=${hallFee}&programFee=${programFee}&caferia=${cafeteriaFee}&selectedCaferia=${selectedCaferiaOption}`;
     window.location.href = url;
 
-    console.log(`total fees = ${totalFees}`);
   }
 });
+
+
+
+

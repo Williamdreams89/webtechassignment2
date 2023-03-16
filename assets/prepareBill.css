@@ -1,16 +1,85 @@
-table {
-    border-collapse: collapse;
-    width: 100%;
+
+/* General */
+
+*{
+	margin: 0;
 }
-th, td {
-    text-align: left;
-    padding: 8px;
-    text-align: center !important;
+
+body{
+	color: #006;
 }
-th {
-    background-color: #008CBA;
-    color: white;
+
+
+/* Preparebill main */
+
+#some_information{
+	width: 700px;
+	height: max-content;
+	margin: 1rem auto;
 }
-tr:nth-child(even) {
-    background-color: #008CBA;
+
+.lead_one{
+	display: flex;
+	justify-content: space-around;
+	color: #006;
+	text-align: justify;
 }
+
+.lead_one img{
+	object-fit: cover;
+	width: 150px;
+	height: 70%;
+	flex: 10%;
+}
+
+.lead_one div{
+	flex: 90%;
+	width: 60%;
+	position: relative;
+	margin-left: 1rem;
+	height: 1rem !important;
+}
+
+.lead_one div >*:not(:first-child){
+	margin-top: 1rem;
+}
+
+
+
+.lead_one div hr{
+	border: 1px solid #006;
+	width: 70%;
+	position: absolute;
+}
+
+.another_overall{
+	width: 80%;
+	margin: 1rem auto;
+	color: #006;
+}
+
+.another_overall div{
+	display: flex;
+	margin-top: 1rem;
+	align-items: center;
+	width: 80%;
+	justify-content: space-around;
+	border-bottom: .01px solid rgb(215, 215, 245) !important;
+}
+
+.another_overall div label{
+	flex: 5;
+}
+
+.another_overall div h3{
+	flex: 6;
+	font-weight: 100;
+}
+
+#table_body{
+	width: 700px;
+	margin: 3rem auto;
+}
+
+
+

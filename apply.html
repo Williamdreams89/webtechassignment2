@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="assets/apply.css" />
   </head>
   <body>
+    <div class="backdrop">
+      <img src="assets/loco.webp" width="">
+    </div>
     <div class="form_container">
       <form id="reg-form">
-        <h2>Student registration</h2>
+        <h2>Registration</h2>
         <div class="form_field">
           <input type="text" placeholder="First Name" id="first-name" />
         </div>
@@ -19,12 +22,12 @@
         </div>
         <div class="form_field">
           <select name="programme" id="programme" required>
-            <option value="null">Please select your programme of choice</option>
-            <option value="BSc(Health Information)">BSc(Health Information)</option>
-            <option value="BSc(Mathematics)">BSc(Mathematics)</option>
-            <option value="BSc(Medicine)">BSc(Medicine)</option>
-            <option value="BSc(Political science)">BSc(Political science)</option>
-            <option value="BSc(International Business)">BSc(International Business)</option>
+              <option value="null">Please select your programme of choice</option>
+              <option value="BSc(Health Information)">BSc(Health Information) - GH5000</option>
+              <option value="BSc(Mathematics)">BSc(Mathematics) - GH3500</option>
+              <option value="BSc(Medicine)">BSc(Medicine) - GHC7000</option>
+              <option value="BSc(Political science)">BSc(Political science) - GHC2000</option>
+              <option value="BSc(International Business)">BSc(International Business) - GHC2500</option>
           </select>
         </div>
         <div class="form_field">
@@ -60,15 +63,16 @@
           </label>
         </div>
         <div class="form_field">
-          <input type="date" placeholder="Date of Birth" id="date-of-birth"  />
+          <input type="date" placeholder="Date of Birth" id="date-of-birth" max="12-12-1990" min="12-12-2012"  />
         </div>
         <div class="form_field">
           <select name="hallsOfresidence" id="hallsOfresidence" required>
             <option value="null">Please select your Hall of residence</option>
-            <option value="SRC">SRC</option>
-            <option value="Valco">Valco</option>
-            <option value="Adehye">Adehye</option>
-            <option value="Casford">Casford</option>
+            <option value="SRC">SRC - GHC400</option>
+            <option value="Valco">Valco - GHC300</option>
+            <option value="Adehye">Adehye - GHC300</option>
+            <option value="Casford">Casford - GHC300</option>
+            <option value="SSNIT">SSNIT - GHC350</option>
           </select>
         </div>
         <div class="form_field">
@@ -76,7 +80,7 @@
           <div class="cs_one">
             <label>
               <input type="radio" name="cafeteria" value="yes" required />
-              Yes
+              Yes - <small>GH120</small>
             </label>
           </div>
           <div class="cs_one">
@@ -89,6 +93,7 @@
         <input type="submit" value="Submit" />
       </form>
     </div>
+    
 <script type="application/javascript" src="apply.js"></script>
 </body>
 </html>
